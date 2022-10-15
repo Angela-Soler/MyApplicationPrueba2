@@ -75,7 +75,7 @@ public class ActivityList extends AppCompatActivity {
         listaConcatenada = new ArrayList<>();
 
         for (int i=0; i < lista.size(); i++){
-            listaConcatenada.add("Nombres: "+lista.get(i).getNombre()+" \nApellidos: "+
+            listaConcatenada.add("Nombre: "+lista.get(i).getNombre()+" \nApellidos: "+
                     lista.get(i).getApellidos()+" \nEdad: "+
                     lista.get(i).getEdad()+" \nCorreo: "+
                     lista.get(i).getCorreo());
