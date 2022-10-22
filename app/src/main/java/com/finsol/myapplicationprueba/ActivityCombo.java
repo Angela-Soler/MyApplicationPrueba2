@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -40,6 +43,26 @@ public class ActivityCombo extends AppCompatActivity {
 
         ArrayAdapter<CharSequence> adp = new ArrayAdapter(this, android.R.layout.simple_spinner_item, listString);
         spPersonas.setAdapter(adp);
+
+        spPersonas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                try{
+                    txtNombre.setText(lista.get(i).getNombre());
+                    txtApellidos.setText(lista.get(i).getApellidos());
+                    txtCorreo.setText(lista.get(i).getCorreo());
+                }catch(Exception e){
+                    Log.i("Error", e.getMessage());
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
     private void obtenerPersonas() {
