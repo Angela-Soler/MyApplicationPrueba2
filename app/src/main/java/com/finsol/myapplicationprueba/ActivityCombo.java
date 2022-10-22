@@ -69,7 +69,9 @@ public class ActivityCombo extends AppCompatActivity {
     private void fillCombo() {
         listString = new ArrayList<String>();
         for(int i=0; i < lista.size(); i++){
-            listString.add(lista.get(i).getNombre()+ " "+lista.get(i).getApellidos() + " "+lista.get(i).getCorreo());
+            listString.add(lista.get(i).getNombre()+
+                    " "+lista.get(i).getApellidos() +
+                    " "+lista.get(i).getCorreo());
 
 
         }
